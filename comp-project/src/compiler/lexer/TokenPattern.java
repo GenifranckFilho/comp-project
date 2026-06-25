@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 public enum TokenPattern {
     FLOAT("[0-9]+\\.[0-9]+", TokenType.FLOAT),
     INT("[0-9]+", TokenType.INT),
-    ID("", TokenType.ID),
+    ID("[a-zA-Z][a-zA-Z0-9]*", TokenType.ID),
     AP("\\(", TokenType.AP),
     FP("\\)", TokenType.FP),
     OP_POW("\\^", TokenType.OP_POW),

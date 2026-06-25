@@ -15,15 +15,21 @@ public class Lexer implements Closeable{
             if(buffer.isEOL()){
                 buffer.readNextLine();
             }else{
+                boolean matched = false;
                 for(var tp : TokenPattern.values()){
                     var lexema = buffer.tryMatch(tp.getPattern());
                     if(lexema != null){
                         buffer.consume(lexema);
-                        if (tp.getType() == TokenType.WHITESPACE) break; //ignora o espaço em branco
-                        return new Token(lexema, tp.getType());
+                        matched = true;
+                        if (tp.getType() != TokenType.WHITESPACE){
+                            return new Token(lexema, tp.getType());
+                        }  
+                        break;
                     }
                 }
-                throw new RuntimeException("Caractere não reconhecido");
+                if (!matched) {
+                    throw new RuntimeException("Caractere não reconhecido");
+                }
             }
         }
         return new Token("", TokenType.EOF);
