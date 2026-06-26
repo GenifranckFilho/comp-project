@@ -31,6 +31,7 @@ import java.io.IOException;
  *   - ^              →  direita   (via recursão direta em Pow)
  *   - unário + e -   →  direita   (via recursão direta em Unary)
  */
+
 public class ExpressionParser {
 
     private Lexer lexer;
@@ -97,6 +98,7 @@ public class ExpressionParser {
      *         op="+", right=term()="C" -> novo acumulador = "+ + A B C"
      *         exprTail("+ + A B C") -> ε -> retorna "+ + A B C"
      */
+    
     private String exprTail(String left) throws IOException {
         if (lookahead.type() == TokenType.OP_SOMA) {
             match(TokenType.OP_SOMA);
