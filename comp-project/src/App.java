@@ -69,7 +69,7 @@ public class App {
             }
 
         } catch (RuntimeException e) {
-            System.err.println("  ✗ " + e.getMessage());
+            System.err.println("  ✗ Erro na linha " + lineNumber + ": " + e.getMessage());
         } catch (Exception e) {
             System.err.println("  ✗ Erro inesperado: " + e.getMessage());
         } finally {
