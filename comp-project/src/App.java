@@ -17,7 +17,6 @@ public class App {
         }
     }
 
-
     private static void processFile(String fileName) throws Exception {
         Path path = Paths.get(fileName);
         if (!Files.exists(path)) {
@@ -37,7 +36,6 @@ public class App {
         }
     }
 
-
     private static void processStdin() throws Exception {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Compilador de Expressões Aritméticas");
@@ -52,7 +50,6 @@ public class App {
             processExpression(line, lineNumber);
         }
     }
-
 
     private static void processExpression(String expression, int lineNumber) {
         System.out.print("Infixa  [" + lineNumber + "]: " + expression + "\n");
