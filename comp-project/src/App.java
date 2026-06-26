@@ -4,15 +4,7 @@ import java.io.*;
 import java.nio.file.*;
 import java.util.Scanner;
 
-/**
- * Ponto de entrada do compilador de expressões aritméticas.
- *
- * Uso:
- *   java App <arquivo>          — lê expressões do arquivo (uma por linha)
- *   java App                   — lê expressões da entrada padrão (uma por linha)
- *
- * Para cada expressão, imprime a representação em notação prefixa.
- */
+
 public class App {
 
     public static void main(String[] args) throws Exception {
@@ -25,9 +17,7 @@ public class App {
         }
     }
 
-    // -----------------------------------------------------------------------
-    // Processa todas as expressões de um arquivo (uma por linha)
-    // -----------------------------------------------------------------------
+
     private static void processFile(String fileName) throws Exception {
         Path path = Paths.get(fileName);
         if (!Files.exists(path)) {
@@ -47,9 +37,7 @@ public class App {
         }
     }
 
-    // -----------------------------------------------------------------------
-    // Processa expressões da entrada padrão
-    // -----------------------------------------------------------------------
+
     private static void processStdin() throws Exception {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Compilador de Expressões Aritméticas");
@@ -65,9 +53,7 @@ public class App {
         }
     }
 
-    // -----------------------------------------------------------------------
-    // Processa uma única expressão: faz análise léxica + sintática + TDS
-    // -----------------------------------------------------------------------
+
     private static void processExpression(String expression, int lineNumber) {
         System.out.print("Infixa  [" + lineNumber + "]: " + expression + "\n");
 
