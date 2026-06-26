@@ -28,7 +28,7 @@ public class Lexer implements Closeable{
                     }
                 }
                 if (!matched) {
-                    throw new RuntimeException("Caractere não reconhecido");
+                    throw new RuntimeException("Erro léxico: caractere '" + buffer.getCurrentChar() + "' não reconhecido na coluna " + (buffer.getCol() + 1) + ".");
                 }
             }
         }
